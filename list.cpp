@@ -1,17 +1,9 @@
-//
-// Created by Turbo on 12/04/2019.
-//
-
 #include "list.h"
-linked_list::linked_list() {
-
-}
+linked_list::linked_list() = default;
 linked_list::linked_list(const linked_list &src) {
 
 }
-linked_list::~linked_list() {
-
-}
+linked_list::~linked_list() = default;
 linked_list &linked_list::operator=(const linked_list &rhs) {
   return <#initializer #>;
 }
@@ -19,7 +11,14 @@ linked_list &linked_list::operator+=(const linked_list &rhs) {
   return <#initializer #>;
 }
 void linked_list::push_front(double value) {
-
+  node_t *temp = new node_t(value, nullptr, nullptr);
+  if (head == NULL) {
+    head = temp;
+    tail = temp;
+  } else {
+    tail->next = temp;
+    tail = temp;
+  }
 }
 void linked_list::push_back(double value) {
 
