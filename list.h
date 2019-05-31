@@ -1,8 +1,11 @@
 #ifndef LABB3_LIST_H
 #define LABB3_LIST_H
 #include <cstdio>
+#include <iostream>
 
 #endif // LABB3_LIST_H
+
+void test_msg(std::string str);
 
 class linked_list {
 public:
@@ -30,7 +33,6 @@ public:
   // output
   void print() const;
   void print_reverse() const;
-
 private:
   struct node_t {
     node_t(double value, node_t *next = nullptr, node_t *prev = nullptr);
@@ -41,3 +43,4 @@ private:
   node_t *head;
   node_t *tail;
 };
+void print_list(linked_list &list);
